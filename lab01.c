@@ -20,7 +20,7 @@ int main() {
     printf("x: ");
     scanf("%lf", &x);
     double y = f(x);
-    printf("y: %lf", y);
+    printf("y: %lf\n", y);
 
     return 0;
 }
