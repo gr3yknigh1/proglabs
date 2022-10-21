@@ -4,7 +4,6 @@
  * 
  * $ gcc lab02.c -o lab02
  * */
-
 #include <stdio.h>
 
 
