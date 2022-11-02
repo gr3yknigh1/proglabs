@@ -1,35 +1,63 @@
 /*
  * Лабараторная №2
  * Аккузин Илья (ПО-2022-1)
- * 
+ *
  * $ gcc lab02.c -o lab02
  * */
 #include <stdio.h>
+#include <memory.h>
+#include <sys/types.h>
+#include <locale.h>
+
+
+#define NAME_BUFFER_MIN_SIZE 15
 
 
 int main() {
 
-    char a = 'A';
-    printf("%c\n", a);
+  // @NOTE: Пытался перевести для ввода / вывода, но не получилось
+  setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    char name[15];
-    printf("Меня зовут ");
-    scanf("%s", name);
+  char a;
+  printf("Введите символ: ");
+  scanf("%c", &a);
+  printf("Вы ввели: \"%c\"\n", a);
 
-    int x = 315;
-    printf("%d\n", x);
 
-    int y = -27;
-    printf("%d\n", y);
+  char name[NAME_BUFFER_MIN_SIZE];
+  printf("Меня зовут: ");
+  scanf("%s", name);
+  printf("Вы ввели: \"%s\"\n", name);
+  printf("Длинна строки: %ld\n", strlen(name));
 
-    float z = 127.361;
-    printf("%f\n", z);
 
-    double j = -574.953;
-    printf("%lf\n", j);
+  int x, y;
+  printf("Введите два целых числа... \n");
+  printf("[0]: ");
+  scanf("%d", &x);
+  printf("[1]: ");
+  scanf("%d", &y);
+  printf("Вы ввели: %d, %d\n", x, y);
 
-    long h = 2124;
-    printf("%ld\n", h);
 
-    return 0;
+  float z, j;
+  printf("Введите два числа с плавающей точкой...\n");
+  printf("[0]: ");
+  scanf("%f", &z);
+  printf("[1]: ");
+  scanf("%f", &j);
+  printf("Вы ввели: \"%f, %f\"\n", z, j);
+  printf(">> %.4e\n", z);
+  printf(">> %.4e\n", j);
+
+
+  uint h;
+  printf("Введите положительное число...\n");
+  printf("[0]: ");
+  scanf("%u", &h);
+  printf("Вы ввели: \"%u\"\n", h);
+  printf("В восьмеричной: \"%o\"\n", h);
+  printf("В шеснадцатеричной: \"%x\"\n", h);
+
+  return 0;
 }
