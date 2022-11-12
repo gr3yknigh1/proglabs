@@ -11,6 +11,7 @@
  * */
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <time.h>
 
 
@@ -56,7 +57,7 @@ void a() {
     dynamic_sign_sum += ( i % 2 ? 1 : -1 ) * array[i];
   }
 
-  printf("Dynamic sign sum: %d\b", dynamic_sign_sum);
+  printf("Dynamic sign sum: %d\n", dynamic_sign_sum);
 }
 
 
@@ -77,11 +78,50 @@ const int get_mat_size(Matrix2* matrix) {
 }
 
 
+const int get_element(const Matrix2* matrix, int x, int y) {
+  const int index = matrix->shape.x * y + x;
+  return matrix->data[index];
+}
+
+
+void print_mat(const Matrix2* matrix) {
+  for (int x = 1; x <= matrix->shape.x; x++) {
+    for (int y = 1; y < matrix->shape.y; y++) {
+      printf("%d\t", get_element(matrix, x, y));
+    }
+    printf("%c", '\n');
+  }
+}
+
+
 void b() {
   Matrix2 X = (Matrix2) {
     .shape = (Vector2) { 6, 8 },
     .data  = randint_arr(6 * 8, 0, 20),
   };
+  print_mat(&X);
+
+  int K;
+  while (true) {
+    printf("K: ");
+    scanf("%d", &K);
+    if (K > X.shape.x + X.shape.y || K <= 0) {
+      printf("K must be greater than 0 and less than %d\n", X.shape.x + X.shape.y);
+      continue;
+    }
+    break;
+  }
+
+  int sum = 0;
+  for (int x = 1; x <= X.shape.x; x++) {
+    for (int y = 1; y < X.shape.y; y++) {
+      if (x + y == K) {
+        sum += get_element(&X, x, y);
+      }
+    }
+  }
+
+  printf("Sum: %d", sum);
 }
 
 
