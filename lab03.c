@@ -1,5 +1,5 @@
 /*
- * Лабараторная №3
+ * Лабораторная №3
  * Аккузин Илья (ПИН-2022-1)
  *
  * Вариант №1:
@@ -17,12 +17,14 @@
     m = abs(x - y);         \
   }                         \
 
+
 int input(const char* message) {
   printf("%s", message);
   int x;
   scanf("%d", &x);
   return x;
 }
+
 
 int min(const int x, const int y) {
   return x > y ? y : x;
