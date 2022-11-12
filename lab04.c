@@ -6,7 +6,6 @@
  * a) Задан массив А(20). Определить знакопеременную сумму а2 + а3 – а4 + ...
  * б) Просуммировать элементы матрицы Х(6,8), сумма индексов которых равна заданной
  * константе К.
- *
  * $ gcc lab04.c -o lab04
  * */
 #include <stdlib.h>
@@ -85,8 +84,8 @@ const int get_element(const Matrix2* matrix, int x, int y) {
 
 
 void print_mat(const Matrix2* matrix) {
-  for (int x = 1; x <= matrix->shape.x; x++) {
-    for (int y = 1; y < matrix->shape.y; y++) {
+  for (int x = 0; x < matrix->shape.x; x++) {
+    for (int y = 0; y < matrix->shape.y; y++) {
       printf("%d\t", get_element(matrix, x, y));
     }
     printf("%c", '\n');
@@ -113,8 +112,8 @@ void b() {
   }
 
   int sum = 0;
-  for (int x = 1; x <= X.shape.x; x++) {
-    for (int y = 1; y < X.shape.y; y++) {
+  for (int x = 0; x < X.shape.x; x++) {
+    for (int y = 0; y < X.shape.y; y++) {
       if (x + y == K) {
         sum += get_element(&X, x, y);
       }
