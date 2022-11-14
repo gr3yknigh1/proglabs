@@ -1,18 +1,27 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define N 10
 
 int main() {
 
-  // Если под матрицей имеется ввиду двумерный массив, то вот:
+  char* c_ptr;
+  char c_arr[N] = { '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', };
 
-  int matrix[3][3] = {
-    { 9, 2, 3 },
-    { 3, 2, 1 },
-    { 5, 6, 1 },
-  };
+  c_ptr = c_arr;
+  printf("%li\n", strlen(c_ptr)); // 10
 
-  int* ptr = *matrix;
-  printf("%d\n", *ptr); // - «9»
+  int c_ptr_size = 20;
+  c_ptr = malloc(sizeof(char) * c_ptr_size);
+  memset(c_ptr, 'a', sizeof(char) * c_ptr_size);
+  c_ptr[c_ptr_size] = '\0';
+
+  printf("%s\n", c_ptr);
+  printf("%li\n", strlen(c_ptr)); // 20
+
+  const char* name = "a";
+  name = "s";
 
   return 0;
 }
-
