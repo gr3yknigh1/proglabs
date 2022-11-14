@@ -77,9 +77,8 @@ const int get_mat_size(Matrix2* matrix) {
 }
 
 
-const int get_element(const Matrix2* matrix, int x, int y) {
-  const int index = matrix->shape.x * y + x;
-  return matrix->data[index];
+inline const int get_element(const Matrix2* matrix, int x, int y) {
+  return matrix->data[matrix->shape.x * y + x];
 }
 
 

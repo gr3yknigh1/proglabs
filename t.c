@@ -2,16 +2,17 @@
 
 int main() {
 
-  const int m = 12;
-  const int n = 4;
+  // Если под матрицей имеется ввиду двумерный массив, то вот:
 
-  int count = 0;
-  for (int i = 0; i < m; i++) {
-    for (int j = 0; j < n; j++) {
-      count++;
-    }
-  }
+  int matrix[3][3] = {
+    { 9, 2, 3 },
+    { 3, 2, 1 },
+    { 5, 6, 1 },
+  };
 
-  printf("%d", count); // 48
-  printf("%d", m * n); // 48
+  int* ptr = *matrix;
+  printf("%d\n", *ptr); // - «9»
+
+  return 0;
 }
+
