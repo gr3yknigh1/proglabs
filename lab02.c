@@ -15,9 +15,6 @@
 
 int main() {
 
-  // @NOTE: Пытался перевести для ввода / вывода, но не получилось
-  setlocale(LC_ALL, "ru_RU.UTF-8");
-
   char a;
   printf("Введите символ: ");
   scanf("%c", &a);
