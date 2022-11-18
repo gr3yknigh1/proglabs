@@ -6,12 +6,11 @@
  * */
 #include <stdio.h>
 #include <memory.h>
-#include <sys/types.h>
-#include <locale.h>
-
 
 #define NAME_BUFFER_MIN_SIZE 15
 
+
+typedef unsigned int uint;
 
 int main() {
 
