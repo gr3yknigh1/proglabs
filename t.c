@@ -1,10 +1,23 @@
-#include "stdio.h"
+#include <stdio.h>
+#include "types.h"
+
 
 
 int main() {
-  const char* name = "Ilya";
+
+    int x = 10;
+
+    printf("%d\n", x);
+
+    int* pointer_x = &x;
+
+    x++;
+
+    printf("%p\n", pointer_x);
+
+    printf("%d\n", *pointer_x);
 
 
-  return 0;
+    return 0;
 }
 
